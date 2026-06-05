@@ -1,0 +1,51 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# .NET build
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Rider / JetBrains / Android Studio
+.idea/
+*.iml
+
+# Android / Gradle
+.gradle/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+
+# Android generated
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Keystores / signing
+*.jks
+*.keystore
+*.p12
+*.pem
+
+# Environment / secrets
+.env
+.env.*
+appsettings.Development.json
+
+# Optional: ignore backend appsettings if it has passwords
+# appsettings.jsonBackend/Backend/appsettings.json

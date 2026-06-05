@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS playlist_songs;
+
+USE playlist_songs;
+
+CREATE TABLE PlayList (
+    IdPlayList INT AUTO_INCREMENT PRIMARY KEY,
+    NamePlayList VARCHAR(100) NOT NULL,
+    Information VARCHAR(255),
+    DateCreate DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Songs (
+    IdSong INT AUTO_INCREMENT PRIMARY KEY,
+    Title VARCHAR(150) NOT NULL,
+    Artist VARCHAR(150) NOT NULL,
+    Album VARCHAR(150),
+    Genre VARCHAR(100),
+    LapseTime VARCHAR(10)
+);
+
+CREATE TABLE PlayListSongs (
+    IdPlayListSong INT AUTO_INCREMENT PRIMARY KEY,
+    IdPlayList INT NOT NULL,
+    IdSong INT NOT NULL,
+    AssignmentDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (IdPlayList) REFERENCES PlayList(IdPlayList),
+    FOREIGN KEY (IdSong) REFERENCES Songs(IdSong)
+);
+
+
+ALTER TABLE PlayListSongs
+ADD CONSTRAINT UQ_PlayListSongs UNIQUE (IdPlayList, IdSong);
